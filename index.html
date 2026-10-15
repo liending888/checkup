@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>3 分鐘財務體檢｜好享貸/聯鼎行銷/超順行銷</title>
+<meta name="description" content="7 題選擇題，3 分鐘看懂自己的負債狀況。不需填寫姓名電話，本網頁不蒐集任何資料。">
+<style>
+/* =====================================================
+   【設定區】要修改的內容都在這裡，其他地方不用動
+   ===================================================== */
+</style>
+<script>
+const CONFIG = {
+  // 公司名稱（顯示在網頁與圖卡上）
+  companyName: "好享貸/聯鼎行銷/超順行銷",
+
+  // LINE 官方帳號連結：把 @ 後面換成你們的 LINE ID
+  // 例如 ID 是 @abc1234，就寫 "https://line.me/R/ti/p/@abc1234"
+  lineUrl: "https://line.me/R/ti/p/@ding_888"
+};
+</script>
+<style>
+:root{
+  --bg:#f3f1ec;
+  --ink:#1c2733;
+  --ink-soft:#56616d;
+  --line:#dcd7cc;
+  --navy:#16324a;
+  --navy-2:#21496b;
+  --gold:#c8963e;
+  --gold-soft:#f6ead2;
+  --card:#ffffff;
+  --ok:#3d8b6d;
+  --mid:#d39b2a;
+  --high:#d9722f;
+  --top:#c2483d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg)}
+body{
+  font-family:"PingFang TC","Noto Sans TC","Microsoft JhengHei","Heiti TC",sans-serif;
+  color:var(--ink);line-height:1.6;min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:420px;margin:0 auto;padding:16px 16px 40px}
+.screen{display:none}
+.screen.active{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- 開場 ---------- */
+.brand{font-size:13px;letter-spacing:.15em;color:var(--ink-soft);margin:8px 0 28px}
+.hero h1{font-size:30px;line-height:1.3;color:var(--navy);letter-spacing:.02em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p{margin-top:12px;color:var(--ink-soft);font-size:15px}
+.points{margin:28px 0;border-top:1px solid var(--line)}
+.points li{list-style:none;display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.points b{color:var(--navy);min-width:22px;font-family:Georgia,serif;font-size:18px;line-height:1.4}
+.vip-teaser{background:var(--navy);color:#fff;border-radius:14px;padding:16px 18px;font-size:14px;margin-bottom:24px}
+.vip-teaser strong{color:#f2c879}
+.btn{
+  display:block;width:100%;border:0;border-radius:12px;padding:16px;
+  font-size:17px;font-weight:600;font-family:inherit;cursor:pointer;
+  background:var(--gold);color:#fff;letter-spacing:.05em;
+  box-shadow:0 4px 0 #a87a2c;transition:transform .1s;
+  text-align:center;text-decoration:none;
+}
+.btn:active{transform:translateY(2px);box-shadow:0 2px 0 #a87a2c}
+.btn.ghost{background:transparent;color:var(--navy);box-shadow:none;border:1.5px solid var(--navy);margin-top:12px;font-size:15px;padding:13px}
+.btn.line{background:#06c755;box-shadow:0 4px 0 #049a42}
+.fine{font-size:12px;color:var(--ink-soft);text-align:center;margin-top:16px}
+
+/* ---------- 題目 ---------- */
+.qtop{display:flex;align-items:center;justify-content:space-between;margin:4px 0 12px}
+.back{background:none;border:0;font-family:inherit;font-size:14px;color:var(--ink-soft);cursor:pointer;padding:6px 0}
+.back[hidden]{visibility:hidden;display:block}
+.count{font-size:14px;color:var(--ink-soft);font-family:Georgia,serif}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:28px}
+.bar i{display:block;height:100%;background:var(--gold);width:0;transition:width .3s}
+.qtext{font-size:22px;line-height:1.45;color:var(--navy);font-weight:600;margin-bottom:6px}
+.qhint{font-size:14px;color:var(--ink-soft);margin-bottom:22px}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{
+  text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:12px;
+  padding:15px 16px;font-size:16px;font-family:inherit;color:var(--ink);cursor:pointer;
+  transition:border-color .15s, background .15s;
+}
+.opt:hover{border-color:var(--navy-2)}
+.opt.picked{border-color:var(--gold);background:var(--gold-soft)}
+
+/* ---------- 結果圖卡 ---------- */
+.shot-tip{font-size:13px;text-align:center;color:var(--ink-soft);margin:0 0 10px}
+.card{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 6px 24px rgba(22,50,74,.12)}
+.c-head{background:var(--navy);color:#fff;padding:12px 18px}
+.c-head .b{font-size:12px;letter-spacing:.06em;opacity:.8}
+.c-head .r{display:flex;justify-content:space-between;align-items:baseline;margin-top:2px}
+.c-head .t{font-size:17px;font-weight:600;letter-spacing:.08em}
+.c-head .d{font-size:11px;opacity:.75}
+.c-body{padding:16px 18px 6px}
+.c-label{font-size:12px;color:var(--ink-soft);letter-spacing:.1em}
+.c-type{font-size:26px;font-weight:700;color:var(--navy);line-height:1.3;margin:2px 0 4px}
+.c-desc{font-size:14px;color:var(--ink);line-height:1.55}
+.gauge{margin:14px 0 4px}
+.g-row{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;margin-bottom:6px}
+.g-row b{font-size:15px}
+.g-track{position:relative;height:10px;border-radius:5px;background:linear-gradient(90deg,var(--ok) 0%,var(--mid) 40%,var(--high) 65%,var(--top) 100%)}
+.g-dot{position:absolute;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:#fff;border:4px solid var(--navy);box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.g-scale{display:flex;justify-content:space-between;font-size:10px;color:var(--ink-soft);margin-top:4px}
+.stress{display:flex;justify-content:space-between;align-items:center;margin:12px 0 0;padding:8px 12px;border-radius:8px;background:#fbeee9;border-left:4px solid var(--top)}
+.stress span{font-size:12px;color:var(--ink-soft)}
+.stress b{font-size:15px;color:var(--top)}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:12px 0}
+.chip{background:var(--bg);border-radius:8px;padding:7px 6px;text-align:center}
+.chip span{display:block;font-size:10px;color:var(--ink-soft)}
+.chip b{display:block;font-size:13px;color:var(--navy);line-height:1.35}
+.tips{border-top:1px dashed var(--line);padding-top:10px}
+.tips h3{font-size:12px;color:var(--ink-soft);font-weight:500;letter-spacing:.1em;margin-bottom:4px}
+.tips li{list-style:none;font-size:13.5px;padding-left:18px;position:relative;margin:3px 0;line-height:1.5}
+.tips li:before{content:"";position:absolute;left:3px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.vip{margin:12px 18px 0;border:2px solid var(--gold);background:var(--gold-soft);border-radius:12px;padding:10px 14px;position:relative}
+.vip .stamp{font-size:15px;font-weight:700;color:#8a5f17;letter-spacing:.06em}
+.vip .when{font-size:13px;color:var(--ink);margin-top:2px}
+.vip .when b{color:var(--navy)}
+.vip .hours{font-size:11.5px;color:var(--ink-soft);margin-top:3px}
+.c-foot{padding:10px 18px 14px;font-size:10px;color:var(--ink-soft);line-height:1.5}
+.c-foot .code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:11px;color:var(--navy);letter-spacing:.05em}
+.after{margin-top:22px}
+.after h2{font-size:16px;color:var(--navy);margin-bottom:10px}
+.steps{counter-reset:s;margin-bottom:16px}
+.steps li{list-style:none;counter-increment:s;position:relative;padding:0 0 10px 34px;font-size:14px}
+.steps li:before{content:counter(s);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font-size:13px;text-align:center;line-height:24px}
+.help{margin-top:22px;padding:14px 16px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:13px;color:var(--ink-soft)}
+.help b{color:var(--ink)}
+.help a{color:var(--navy-2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 開場 -->
+  <section class="screen active" id="intro">
+    <div class="brand" id="brandName"></div>
+    <div class="hero">
+      <h1>3 分鐘<br><em>財務體檢</em></h1>
+      <p>擔心條件不符？客服小編上班前，先來測測你的財務體質，提前看懂自己的狀況！</p>
+    </div>
+    <ul class="points">
+      <li><b>7</b><span>題選擇題，憑直覺作答就好</span></li>
+      <li><b>0</b><span>不用填姓名、電話、身分證，網頁不會記錄任何資料</span></li>
+      <li><b>1</b><span>張專屬結果圖卡，讓你心裡有個底</span></li>
+    </ul>
+    <div class="vip-teaser">完成後把結果圖卡<strong>截圖回傳 LINE客服</strong>，小編開工就能升級<strong>「早鳥 VIP 優先處理」</strong>，不用再從頭說一次。</div>
+    <button class="btn" id="startBtn">開始體檢</button>
+    <p class="fine">結果僅供參考，不代表任何貸款或協商結果</p>
+  </section>
+
+  <!-- 題目 -->
+  <section class="screen" id="quiz">
+    <div class="qtop">
+      <button class="back" id="backBtn">← 上一題</button>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="bar"><i id="barFill"></i></div>
+    <div class="qtext" id="qText"></div>
+    <div class="qhint" id="qHint"></div>
+    <div class="opts" id="opts"></div>
+  </section>
+
+  <!-- 結果 -->
+  <section class="screen" id="result">
+    <p class="shot-tip">↓ 請截圖下方圖卡，回傳到 LINE 官方帳號 ↓</p>
+    <div class="card" id="card">
+      <div class="c-head"><div class="b" id="cBrand"></div><div class="r"><span class="t">財務體檢結果</span><span class="d" id="cDate"></span></div></div>
+      <div class="c-body">
+        <div class="c-label">你的財務體檢類型</div>
+        <div class="c-type" id="cType"></div>
+        <div class="c-desc" id="cDesc"></div>
+        <div class="gauge">
+          <div class="g-row"><span>負債壓力指數</span><b id="cLevel"></b></div>
+          <div class="g-track"><div class="g-dot" id="cDot"></div></div>
+          <div class="g-scale"><span>輕度</span><span>中度</span><span>偏高</span><span>建議盡早諮詢</span></div>
+        </div>
+        <div class="stress"><span>最有壓力的負債</span><b id="k0"></b></div>
+        <div class="chips">
+          <div class="chip"><span>負債筆數</span><b id="k1"></b></div>
+          <div class="chip"><span>月付佔收入</span><b id="k2"></b></div>
+          <div class="chip"><span>近半年繳款</span><b id="k3"></b></div>
+        </div>
+        <div class="tips">
+          <h3>今天你可以先做的事</h3>
+          <ul id="cTips"></ul>
+        </div>
+      </div>
+      <div class="vip">
+        <div class="stamp">★ 早鳥 VIP 優先處理</div>
+        <div class="when">截圖回傳 LINE，小編<b>上班後優先回覆</b>你</div>
+        <div class="hours">服務時間：週一至週五 08:30–17:30（國定假日除外）</div>
+      </div>
+      <div class="c-foot">
+        體檢編號 <span class="code" id="cCode"></span><br>
+        本結果依自填答案估算，僅供參考，不代表任何貸款或協商結果。
+      </div>
+    </div>
+
+    <div class="after">
+      <h2>接下來只要兩步</h2>
+      <ol class="steps">
+        <li>截圖上方的結果圖卡</li>
+        <li>打開 LINE 官方帳號，把截圖傳給我們</li>
+      </ol>
+      <a class="btn line" id="lineBtn" href="#" target="_blank" rel="noopener">前往 LINE 回傳截圖</a>
+      <button class="btn ghost" id="retryBtn">重新體檢</button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+/* ---------- 題目內容 ---------- */
+const QUESTIONS = [
+  { q:"你目前大約有幾筆貸款或卡債？", hint:"信用卡、信貸、車貸、民間借款都算一筆",
+    opts:[["1 筆",0,"1 筆"],["2–3 筆",10,"2–3 筆"],["4 筆以上",20,"4 筆以上"],["不太清楚",12,"不清楚"]] },
+  { q:"金額最大的是哪一種？", hint:"選最讓你有壓力的那一種",
+    opts:[["信用卡／現金卡",8],["信用貸款",5],["車貸或房貸",3],["民間借款或當鋪",15],["好幾種差不多",12,"多種負債都有壓力"]] },
+  { q:"每個月要還的錢，大約佔收入幾成？", hint:"大概估就好，不用精算",
+    opts:[["3 成以下",0,"3 成以下"],["3–5 成",10,"3–5 成"],["5–7 成",20,"5–7 成"],["7 成以上",28,"7 成以上"]] },
+  { q:"最近半年的繳款狀況？", hint:"",
+    opts:[["都有準時繳",0,"準時"],["偶爾晚幾天",8,"偶爾晚繳"],["常常只繳最低",14,"只繳最低"],["已有遲繳超過一個月",22,"遲繳逾月"]] },
+  { q:"有沒有借新的錢去還舊的債？", hint:"例如用 A 卡預借現金去繳 B 卡",
+    opts:[["沒有",0],["偶爾會",8],["經常這樣",16]] },
+  { q:"你目前的收入狀況？", hint:"",
+    opts:[["固定薪資，有勞保",0],["有工作，但收入不固定",6],["自己當老闆／接案",6],["目前沒有收入",10]] },
+  { q:"你最想先解決哪件事？", hint:"明天小編會從這裡開始跟你聊",
+    opts:[["降低每個月的還款壓力",0],["把好幾筆債整合起來",0],["了解協商、更生等程序",0],["需要再周轉一筆資金",0]] }
+];
+const MAX_SCORE = 20+15+28+22+16+10;
+
+const TYPES = {
+  negotiate:{ name:"協商評估型", desc:"繳款已經開始吃力。越早了解銀行協商等相關程序，你手上的選項就越多。",
+    tips:["整理每家銀行的欠款金額與最近一次繳款日","先暫停用新借款補舊缺口，避免利息越滾越大"] },
+  multi:{ name:"多頭整合型", desc:"債務分散在好幾個地方，利息和管理成本加起來，可能比你想得還高。",
+    tips:["列出每筆債務的利率、月付和剩餘期數","想想哪幾筆最貴、最想先處理"] },
+  monthly:{ name:"月付壓力型", desc:"每月還款佔收入比例偏高，生活的緩衝空間不太夠。",
+    tips:["算出每月最低生活所需，確認真正能還的金額","把固定支出列一張清單，明天一起討論"] },
+  unclear:{ name:"資訊釐清型", desc:"對自己的負債全貌還不太清楚。這是很多人的起點，不用擔心。",
+    tips:["可向聯徵中心申請個人信用報告，看見完整債務","把帳單、繳款簡訊集中在同一處整理"] },
+  funding:{ name:"資金規劃型", desc:"目前狀況大致可控，新的資金需求值得先評估清楚再決定。",
+    tips:["確認這筆資金的用途和未來的還款來源","比較時看總費用年百分率，不只看月付"] },
+  steady:{ name:"穩健調整型", desc:"整體負擔在可控範圍內，維持好習慣就是最好的策略。",
+    tips:["持續準時繳款，信用紀錄會是你的資產","慢慢存下 3–6 個月生活費當緊急預備金"] }
+};
+
+/* ---------- 程式 ---------- */
+const $ = id => document.getElementById(id);
+let answers = [];
+let step = 0;
+let busy = false;
+
+function show(id){
+  document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
+  $(id).classList.add("active");
+  window.scrollTo(0,0);
+}
+
+function renderQ(){
+  const Q = QUESTIONS[step];
+  $("count").textContent = (step+1) + " / " + QUESTIONS.length;
+  $("barFill").style.width = (step/QUESTIONS.length*100) + "%";
+  $("backBtn").hidden = step === 0;
+  $("qText").textContent = Q.q;
+  $("qHint").textContent = Q.hint;
+  const box = $("opts"); box.innerHTML = "";
+  Q.opts.forEach((o,i)=>{
+    const b = document.createElement("button");
+    b.className = "opt" + (answers[step]===i ? " picked" : "");
+    b.textContent = o[0];
+    b.onclick = ()=>{
+      if(busy) return;
+      busy = true;
+      answers[step] = i;
+      box.querySelectorAll(".opt").forEach(x=>x.classList.remove("picked"));
+      b.classList.add("picked");
+      setTimeout(()=>{
+        busy = false;
+        if(step < QUESTIONS.length-1){ step++; renderQ(); }
+        else { $("barFill").style.width="100%"; renderResult(); }
+      }, 220);
+    };
+    box.appendChild(b);
+  });
+}
+
+function pickType(a){
+  if(a[3]===3 || a[4]===2) return "negotiate";
+  if(a[0]===2 || a[1]===4) return "multi";
+  if(a[2]>=2) return "monthly";
+  if(a[0]===3) return "unclear";
+  if(a[6]===3) return "funding";
+  return "steady";
+}
+
+function pad(n){return String(n).padStart(2,"0")}
+function renderResult(){
+  const a = answers;
+  const missing = QUESTIONS.findIndex((Q,i)=>a[i]===undefined || !Q.opts[a[i]]);
+  if(missing !== -1){ step = missing; renderQ(); show("quiz"); return; }
+  let score = 0;
+  QUESTIONS.forEach((Q,i)=>{ score += Q.opts[a[i]][1]; });
+  const pct = Math.round(score/MAX_SCORE*100);
+  let level, color;
+  if(pct<30){level="輕度";color="var(--ok)"}
+  else if(pct<55){level="中度";color="var(--mid)"}
+  else if(pct<75){level="偏高";color="var(--high)"}
+  else{level="建議盡早諮詢";color="var(--top)"}
+
+  const T = TYPES[pickType(a)];
+  const now = new Date();
+  $("cBrand").textContent = CONFIG.companyName;
+  $("cDate").textContent = now.getFullYear()+"/"+pad(now.getMonth()+1)+"/"+pad(now.getDate())+" "+pad(now.getHours())+":"+pad(now.getMinutes());
+  $("cType").textContent = T.name;
+  $("cDesc").textContent = T.desc;
+  $("cLevel").textContent = level;
+  $("cLevel").style.color = color;
+  $("cDot").style.left = Math.min(Math.max(pct,4),96) + "%";
+  $("k0").textContent = QUESTIONS[1].opts[a[1]][2] || QUESTIONS[1].opts[a[1]][0];
+  $("k1").textContent = QUESTIONS[0].opts[a[0]][2];
+  $("k2").textContent = QUESTIONS[2].opts[a[2]][2];
+  $("k3").textContent = QUESTIONS[3].opts[a[3]][2];
+  $("cTips").innerHTML = T.tips.map(t=>"<li>"+t+"</li>").join("");
+  $("cCode").textContent = "LD" + pad(now.getMonth()+1) + pad(now.getDate()) + "-" + a.map(x=>x+1).join("");
+  show("result");
+}
+
+$("brandName").textContent = CONFIG.companyName;
+$("lineBtn").href = CONFIG.lineUrl;
+$("startBtn").onclick = ()=>{ answers=[]; step=0; busy=false; renderQ(); show("quiz"); };
+$("backBtn").onclick = ()=>{ if(busy) return; if(step>0){ step--; renderQ(); } };
+$("retryBtn").onclick = ()=>{ answers=[]; step=0; busy=false; renderQ(); show("quiz"); };
+</script>
+</body>
+</html>
