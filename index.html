@@ -5,12 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>3 分鐘財務體檢｜好享貸/聯鼎行銷/超順行銷</title>
 <meta name="description" content="7 題選擇題，3 分鐘看懂自己的負債狀況。不需填寫姓名電話，本網頁不蒐集任何資料。">
-<style>
+<meta name="theme-color" content="#1a1742">
+<script>
 /* =====================================================
    【設定區】要修改的內容都在這裡，其他地方不用動
    ===================================================== */
-</style>
-<script>
 const CONFIG = {
   // 公司名稱（顯示在網頁與圖卡上）
   companyName: "好享貸/聯鼎行銷/超順行銷",
@@ -22,165 +21,296 @@ const CONFIG = {
 </script>
 <style>
 :root{
-  --bg:#f3f1ec;
-  --ink:#1c2733;
-  --ink-soft:#56616d;
-  --line:#dcd7cc;
-  --navy:#16324a;
-  --navy-2:#21496b;
-  --gold:#c8963e;
-  --gold-soft:#f6ead2;
+  --night:#1a1742;
+  --night-2:#352a7c;
+  --indigo:#4b2d8f;
+  --ink:#1c2340;
+  --ink-soft:#5d6380;
+  --line:#e3e1ee;
+  --bg:#f5f3fb;
   --card:#ffffff;
-  --ok:#3d8b6d;
-  --mid:#d39b2a;
-  --high:#d9722f;
-  --top:#c2483d;
+  --gold:#f0b93b;
+  --gold-2:#e0972a;
+  --gold-soft:#fff4d9;
+  --coral:#ff7a6b;
+  --teal:#2fb8a6;
+  --violet:#5e2a96;
+  --sky:#5fa6d9;
+  --ok:#2fb8a6;
+  --mid:#f0b93b;
+  --high:#ff9a4a;
+  --top:#ef5a5a;
 }
-*{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{background:var(--bg)}
 body{
   font-family:"PingFang TC","Noto Sans TC","Microsoft JhengHei","Heiti TC",sans-serif;
-  color:var(--ink);line-height:1.6;min-height:100vh;
-  -webkit-font-smoothing:antialiased;
+  color:var(--ink);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
-.wrap{max-width:420px;margin:0 auto;padding:16px 16px 40px}
-.screen{display:none}
-.screen.active{display:block;animation:fade .35s ease}
-@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.screen{display:none;min-height:100vh}
+.screen.active{display:block;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.wrap{max-width:420px;margin:0 auto;padding:16px 16px 40px;position:relative}
 
-/* ---------- 開場 ---------- */
-.brand{font-size:13px;letter-spacing:.15em;color:var(--ink-soft);margin:8px 0 28px}
-.hero h1{font-size:30px;line-height:1.3;color:var(--navy);letter-spacing:.02em}
-.hero h1 em{font-style:normal;color:var(--gold)}
-.hero p{margin-top:12px;color:var(--ink-soft);font-size:15px}
-.points{margin:28px 0;border-top:1px solid var(--line)}
-.points li{list-style:none;display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
-.points b{color:var(--navy);min-width:22px;font-family:Georgia,serif;font-size:18px;line-height:1.4}
-.vip-teaser{background:var(--navy);color:#fff;border-radius:14px;padding:16px 18px;font-size:14px;margin-bottom:24px}
-.vip-teaser strong{color:#f2c879}
+/* ================= 開場：夜空 ================= */
+#intro{background:radial-gradient(120% 70% at 80% 0%,#4a3a9a 0%,transparent 60%),linear-gradient(180deg,var(--night) 0%,#231d5c 55%,#2f2a72 100%);color:#fff;position:relative;overflow:hidden}
+.stars{position:absolute;inset:0;pointer-events:none}
+.stars i{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.2;animation:tw 3s infinite ease-in-out}
+@keyframes tw{50%{opacity:1;transform:scale(1.5)}}
+.brand{font-size:12px;letter-spacing:.12em;color:#c9cdf2;margin:6px 0 0;position:relative}
+.hero-art{display:block;width:100%;max-width:300px;margin:6px auto 0;position:relative}
+.float{animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-6px)}}
+.hero{position:relative;text-align:center;margin-top:-4px}
+.pill{display:inline-block;font-size:12px;letter-spacing:.1em;padding:4px 12px;border-radius:99px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#ffe3a3}
+.hero h1{font-size:34px;line-height:1.25;margin-top:10px;letter-spacing:.03em}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#ffd76e,#ffb347);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{margin:12px auto 0;color:#d6d9f5;font-size:15px;max-width:330px}
+.points{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:22px 0 16px;position:relative}
+.point{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:12px 6px;text-align:center}
+.point .ic{font-size:22px;line-height:1}
+.point b{display:block;font-size:20px;color:#ffd76e;margin-top:6px;font-family:Georgia,serif}
+.point span{display:block;font-size:11.5px;color:#d6d9f5;line-height:1.4;margin-top:2px}
+.vip-teaser{position:relative;border-radius:16px;padding:14px 16px 14px 58px;font-size:14px;margin-bottom:20px;
+  background:linear-gradient(135deg,rgba(255,215,110,.18),rgba(255,179,71,.08));border:1px solid rgba(255,215,110,.45);color:#fff}
+.vip-teaser .crown{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:32px;height:32px}
+.vip-teaser strong{color:#ffd76e}
 .btn{
-  display:block;width:100%;border:0;border-radius:12px;padding:16px;
-  font-size:17px;font-weight:600;font-family:inherit;cursor:pointer;
-  background:var(--gold);color:#fff;letter-spacing:.05em;
-  box-shadow:0 4px 0 #a87a2c;transition:transform .1s;
-  text-align:center;text-decoration:none;
+  display:block;width:100%;border:0;border-radius:14px;padding:16px;
+  font-size:17px;font-weight:700;font-family:inherit;cursor:pointer;letter-spacing:.06em;
+  text-align:center;text-decoration:none;color:#3a2a00;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#ffd76e,#f0a23b);box-shadow:0 6px 0 #c47f1f,0 10px 24px rgba(240,162,59,.35);transition:transform .1s;
 }
-.btn:active{transform:translateY(2px);box-shadow:0 2px 0 #a87a2c}
-.btn.ghost{background:transparent;color:var(--navy);box-shadow:none;border:1.5px solid var(--navy);margin-top:12px;font-size:15px;padding:13px}
-.btn.line{background:#06c755;box-shadow:0 4px 0 #049a42}
-.fine{font-size:12px;color:var(--ink-soft);text-align:center;margin-top:16px}
+.btn:active{transform:translateY(3px);box-shadow:0 3px 0 #c47f1f}
+.btn.shine:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);animation:shine 2.6s infinite}
+@keyframes shine{60%,100%{left:130%}}
+.btn.line{background:linear-gradient(135deg,#21d16a,#06b04c);color:#fff;box-shadow:0 6px 0 #04893a,0 10px 24px rgba(6,176,76,.3)}
+.btn.line:active{box-shadow:0 3px 0 #04893a}
+.btn.ghost{background:#fff;color:var(--night-2);box-shadow:none;border:1.5px solid var(--line);margin-top:12px;font-size:15px;padding:13px;font-weight:600}
+.fine{font-size:12px;color:#aab0d8;text-align:center;margin-top:14px;position:relative}
 
-/* ---------- 題目 ---------- */
-.qtop{display:flex;align-items:center;justify-content:space-between;margin:4px 0 12px}
-.back{background:none;border:0;font-family:inherit;font-size:14px;color:var(--ink-soft);cursor:pointer;padding:6px 0}
+/* ================= 題目 ================= */
+#quiz{background:linear-gradient(180deg,#eceafd 0%,var(--bg) 220px)}
+.qtop{display:flex;align-items:center;justify-content:space-between;margin:4px 0 10px}
+.back{background:#fff;border:1px solid var(--line);border-radius:99px;font-family:inherit;font-size:13px;color:var(--ink-soft);cursor:pointer;padding:5px 12px}
 .back[hidden]{visibility:hidden;display:block}
-.count{font-size:14px;color:var(--ink-soft);font-family:Georgia,serif}
-.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:28px}
-.bar i{display:block;height:100%;background:var(--gold);width:0;transition:width .3s}
-.qtext{font-size:22px;line-height:1.45;color:var(--navy);font-weight:600;margin-bottom:6px}
-.qhint{font-size:14px;color:var(--ink-soft);margin-bottom:22px}
+.count{font-size:13px;color:var(--ink-soft)}
+.count b{font-size:18px;color:var(--indigo);font-family:Georgia,serif}
+.dots{display:flex;gap:6px;margin-bottom:22px}
+.dots i{flex:1;height:7px;border-radius:4px;background:#dcd9ef;transition:background .3s}
+.dots i.done{background:linear-gradient(90deg,var(--violet),var(--sky))}
+.dots i.now{background:linear-gradient(90deg,#ffd76e,#f0a23b)}
+.qicon{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;font-size:32px;margin-bottom:14px;
+  background:linear-gradient(135deg,#fff,#efeafd);box-shadow:0 6px 16px rgba(91,77,180,.15);animation:pop .4s ease}
+@keyframes pop{0%{transform:scale(.6)}70%{transform:scale(1.08)}100%{transform:none}}
+.qtext{font-size:22px;line-height:1.45;color:var(--ink);font-weight:700;margin-bottom:4px}
+.qhint{font-size:14px;color:var(--ink-soft);margin-bottom:18px;min-height:1em}
 .opts{display:flex;flex-direction:column;gap:10px}
 .opt{
-  text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:12px;
-  padding:15px 16px;font-size:16px;font-family:inherit;color:var(--ink);cursor:pointer;
-  transition:border-color .15s, background .15s;
+  display:flex;align-items:center;gap:12px;text-align:left;background:var(--card);border:2px solid transparent;border-radius:16px;
+  padding:13px 14px;font-size:16px;font-family:inherit;color:var(--ink);cursor:pointer;
+  box-shadow:0 3px 0 #e2def3,0 6px 14px rgba(40,30,110,.06);transition:transform .12s,border-color .15s,background .15s;
+  animation:slide .35s ease both;
 }
-.opt:hover{border-color:var(--navy-2)}
+.opt:active{transform:scale(.98)}
+@keyframes slide{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+.opt .k{flex:none;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;font-size:14px;font-weight:700;color:#fff}
 .opt.picked{border-color:var(--gold);background:var(--gold-soft)}
+.opt.picked .k{background:linear-gradient(135deg,#ffd76e,#f0a23b)!important;color:#3a2a00}
 
-/* ---------- 結果圖卡 ---------- */
-.shot-tip{font-size:13px;text-align:center;color:var(--ink-soft);margin:0 0 10px}
-.card{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 6px 24px rgba(22,50,74,.12)}
-.c-head{background:var(--navy);color:#fff;padding:12px 18px}
-.c-head .b{font-size:12px;letter-spacing:.06em;opacity:.8}
-.c-head .r{display:flex;justify-content:space-between;align-items:baseline;margin-top:2px}
-.c-head .t{font-size:17px;font-weight:600;letter-spacing:.08em}
-.c-head .d{font-size:11px;opacity:.75}
-.c-body{padding:16px 18px 6px}
-.c-label{font-size:12px;color:var(--ink-soft);letter-spacing:.1em}
-.c-type{font-size:26px;font-weight:700;color:var(--navy);line-height:1.3;margin:2px 0 4px}
-.c-desc{font-size:14px;color:var(--ink);line-height:1.55}
-.gauge{margin:14px 0 4px}
+/* ================= 分析中 ================= */
+#loading{background:linear-gradient(180deg,var(--night) 0%,#2f2a72 100%);color:#fff}
+.load-box{max-width:320px;margin:0 auto;padding-top:22vh;text-align:center}
+.scan{width:120px;height:120px;margin:0 auto 26px;position:relative}
+.scan .ring{position:absolute;inset:0;border-radius:50%;border:4px solid rgba(255,255,255,.12);border-top-color:#ffd76e;border-right-color:#5fa6d9;animation:spin 1s linear infinite}
+.scan .core{position:absolute;inset:22px;border-radius:50%;background:radial-gradient(circle,#3b4aa8,#1b2250);display:grid;place-items:center;font-size:34px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.load-box h2{font-size:20px;margin-bottom:16px}
+.ld-list{list-style:none;text-align:left;display:inline-block}
+.ld-list li{font-size:15px;color:#aab0d8;padding:5px 0;transition:color .3s}
+.ld-list li:before{content:"○";display:inline-block;width:24px;color:#6c73b0}
+.ld-list li.ok{color:#fff}
+.ld-list li.ok:before{content:"✓";color:#4fe0b5;font-weight:700}
+
+/* ================= 結果圖卡 ================= */
+#result{background:linear-gradient(180deg,#eceafd 0%,var(--bg) 260px)}
+.shot-tip{font-size:13px;text-align:center;color:var(--indigo);font-weight:600;margin:0 0 10px;animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(3px)}}
+.card{background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 14px 34px rgba(40,30,110,.18);position:relative}
+.c-head{position:relative;padding:12px 18px 14px;color:#fff;overflow:hidden;
+  background:radial-gradient(90% 140% at 100% 0%,#5b4bc0 0%,transparent 60%),linear-gradient(135deg,var(--night),var(--night-2))}
+.c-head .moon{position:absolute;right:14px;top:10px;width:34px;height:34px;opacity:.9}
+.c-head .b{font-size:12px;letter-spacing:.06em;color:#c9cdf2;position:relative}
+.c-head .r{display:flex;justify-content:space-between;align-items:baseline;margin-top:6px;position:relative;padding-right:40px}
+.c-head .t{font-size:18px;font-weight:700;letter-spacing:.08em}
+.c-head .d{font-size:11px;color:#c9cdf2}
+.c-body{padding:14px 18px 4px}
+.type-row{display:flex;align-items:center;gap:12px}
+.type-badge{flex:none;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:28px}
+.c-label{font-size:12px;color:var(--ink-soft);letter-spacing:.08em}
+.c-type{font-size:25px;font-weight:800;line-height:1.25;letter-spacing:.02em}
+.c-desc{font-size:14px;color:var(--ink);line-height:1.55;margin-top:8px}
+.gauge{margin:12px 0 2px}
 .g-row{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;margin-bottom:6px}
 .g-row b{font-size:15px}
-.g-track{position:relative;height:10px;border-radius:5px;background:linear-gradient(90deg,var(--ok) 0%,var(--mid) 40%,var(--high) 65%,var(--top) 100%)}
-.g-dot{position:absolute;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:#fff;border:4px solid var(--navy);box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.g-track{position:relative;height:12px;border-radius:6px;background:linear-gradient(90deg,var(--ok) 0%,var(--mid) 40%,var(--high) 68%,var(--top) 100%)}
+.g-dot{position:absolute;top:50%;left:0;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:#fff;border:5px solid var(--night);box-shadow:0 2px 6px rgba(0,0,0,.25);transition:left 1.2s cubic-bezier(.2,.8,.2,1)}
 .g-scale{display:flex;justify-content:space-between;font-size:10px;color:var(--ink-soft);margin-top:4px}
-.stress{display:flex;justify-content:space-between;align-items:center;margin:12px 0 0;padding:8px 12px;border-radius:8px;background:#fbeee9;border-left:4px solid var(--top)}
+.stress{display:flex;justify-content:space-between;align-items:center;margin:12px 0 0;padding:8px 12px;border-radius:10px;
+  background:linear-gradient(90deg,#ffe9e6,#fff4f2);border-left:4px solid var(--coral)}
 .stress span{font-size:12px;color:var(--ink-soft)}
-.stress b{font-size:15px;color:var(--top)}
-.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:12px 0}
-.chip{background:var(--bg);border-radius:8px;padding:7px 6px;text-align:center}
+.stress b{font-size:15px;color:#e2483a}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 0}
+.chip{border-radius:10px;padding:7px 6px;text-align:center}
+.chip:nth-child(1){background:#eef0ff}
+.chip:nth-child(2){background:#e8f8f5}
+.chip:nth-child(3){background:#fff3e3}
 .chip span{display:block;font-size:10px;color:var(--ink-soft)}
-.chip b{display:block;font-size:13px;color:var(--navy);line-height:1.35}
-.tips{border-top:1px dashed var(--line);padding-top:10px}
-.tips h3{font-size:12px;color:var(--ink-soft);font-weight:500;letter-spacing:.1em;margin-bottom:4px}
-.tips li{list-style:none;font-size:13.5px;padding-left:18px;position:relative;margin:3px 0;line-height:1.5}
-.tips li:before{content:"";position:absolute;left:3px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
-.vip{margin:12px 18px 0;border:2px solid var(--gold);background:var(--gold-soft);border-radius:12px;padding:10px 14px;position:relative}
-.vip .stamp{font-size:15px;font-weight:700;color:#8a5f17;letter-spacing:.06em}
-.vip .when{font-size:13px;color:var(--ink);margin-top:2px}
-.vip .when b{color:var(--navy)}
-.vip .hours{font-size:11.5px;color:var(--ink-soft);margin-top:3px}
-.c-foot{padding:10px 18px 14px;font-size:10px;color:var(--ink-soft);line-height:1.5}
-.c-foot .code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:11px;color:var(--navy);letter-spacing:.05em}
+.chip b{display:block;font-size:13px;color:var(--ink);line-height:1.35}
+.tips{border-top:1px dashed var(--line);padding-top:8px}
+.tips h3{font-size:12px;color:var(--ink-soft);font-weight:500;letter-spacing:.08em;margin-bottom:2px}
+.tips li{list-style:none;font-size:13.5px;padding-left:22px;position:relative;margin:3px 0;line-height:1.5}
+.tips li:before{content:"✓";position:absolute;left:0;top:1px;width:16px;height:16px;border-radius:5px;background:var(--teal);color:#fff;font-size:11px;font-weight:700;text-align:center;line-height:16px}
+.vip{margin:10px 14px 0;border-radius:14px;padding:10px 10px 10px 52px;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#fff6dc 0%,#ffe7a8 55%,#ffd76e 100%);border:1.5px solid #f0b93b}
+.vip:after{content:"";position:absolute;top:0;left:-50%;width:35%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);animation:shine 3s infinite}
+.vip .medal{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:34px;height:34px}
+.vip .stamp{font-size:15px;font-weight:800;color:#8a5200;letter-spacing:.06em}
+.vip .when{font-size:13px;color:var(--ink);margin-top:1px}
+.vip .when b{color:#b04a00}
+.vip .hours{font-size:10.5px;color:#7a6236;margin-top:2px;white-space:nowrap;letter-spacing:-.01em}
+.c-foot{padding:9px 18px 13px;font-size:10px;color:var(--ink-soft);line-height:1.5}
+.c-foot .code{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:11px;color:var(--indigo);letter-spacing:.05em;font-weight:600}
 .after{margin-top:22px}
-.after h2{font-size:16px;color:var(--navy);margin-bottom:10px}
-.steps{counter-reset:s;margin-bottom:16px}
-.steps li{list-style:none;counter-increment:s;position:relative;padding:0 0 10px 34px;font-size:14px}
-.steps li:before{content:counter(s);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font-size:13px;text-align:center;line-height:24px}
-.help{margin-top:22px;padding:14px 16px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:13px;color:var(--ink-soft)}
-.help b{color:var(--ink)}
-.help a{color:var(--navy-2)}
+.after h2{font-size:16px;color:var(--ink);margin-bottom:10px}
+.steps{margin-bottom:16px}
+.steps li{list-style:none;position:relative;padding:0 0 10px 36px;font-size:14px}
+.steps li span{position:absolute;left:0;top:-1px;width:26px;height:26px;border-radius:9px;color:#fff;font-size:13px;font-weight:700;text-align:center;line-height:26px}
+.steps li:nth-child(1) span{background:var(--violet)}
+.steps li:nth-child(2) span{background:#06b04c}
+
+/* 慶祝光點 */
+#fx{position:fixed;inset:0;pointer-events:none;z-index:50}
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <!-- 開場 -->
-  <section class="screen active" id="intro">
+<!-- ================= 開場 ================= -->
+<section class="screen active" id="intro">
+  <div class="stars" id="stars"></div>
+  <div class="wrap">
     <div class="brand" id="brandName"></div>
+
+    <svg class="hero-art" viewBox="0 0 300 170" aria-hidden="true">
+      <defs>
+        <linearGradient id="gMoon" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3c4"/><stop offset="1" stop-color="#ffc857"/></linearGradient>
+        <linearGradient id="gBoard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e6e8ff"/></linearGradient>
+        <linearGradient id="gCoin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset="1" stop-color="#f0a23b"/></linearGradient>
+      </defs>
+      <!-- 月亮 -->
+      <g class="float" style="animation-delay:-1s">
+        <circle cx="236" cy="44" r="28" fill="url(#gMoon)"/>
+        <circle cx="250" cy="34" r="24" fill="#251f5e"/>
+      </g>
+      <!-- 體檢板 -->
+      <g class="float">
+        <rect x="98" y="30" width="104" height="132" rx="14" fill="url(#gBoard)"/>
+        <rect x="128" y="22" width="44" height="16" rx="6" fill="#5e2a96"/>
+        <rect x="114" y="56" width="16" height="16" rx="5" fill="#2fb8a6"/><path d="M118 64l3 3 6-7" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <rect x="138" y="60" width="50" height="8" rx="4" fill="#cdd1f3"/>
+        <rect x="114" y="84" width="16" height="16" rx="5" fill="#5fa6d9"/><path d="M118 92l3 3 6-7" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <rect x="138" y="88" width="40" height="8" rx="4" fill="#cdd1f3"/>
+        <rect x="114" y="112" width="16" height="16" rx="5" fill="#ffd76e"/>
+        <rect x="138" y="116" width="46" height="8" rx="4" fill="#cdd1f3"/>
+        <path d="M114 146h18l6-10 8 18 6-12h34" stroke="#ff7a6b" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <!-- 金幣 -->
+      <g class="float" style="animation-delay:-2s">
+        <circle cx="60" cy="112" r="22" fill="url(#gCoin)"/><circle cx="60" cy="112" r="15" fill="none" stroke="#fff3c4" stroke-width="2.5"/>
+        <text x="60" y="119" text-anchor="middle" font-size="18" font-weight="700" fill="#9a5b00">$</text>
+      </g>
+      <g class="float" style="animation-delay:-.5s">
+        <circle cx="40" cy="60" r="12" fill="url(#gCoin)"/><circle cx="40" cy="60" r="7.5" fill="none" stroke="#fff3c4" stroke-width="2"/>
+      </g>
+      <!-- 閃光 -->
+      <path d="M232 112l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#ffd76e" class="float"/>
+      <path d="M76 20l2.5 6 6 2.5-6 2.5-2.5 6-2.5-6-6-2.5 6-2.5z" fill="#c9b8ff"/>
+    </svg>
+
     <div class="hero">
+      <span class="pill">✦ 下班時間限定 ✦</span>
       <h1>3 分鐘<br><em>財務體檢</em></h1>
       <p>擔心條件不符？客服小編上班前，先來測測你的財務體質，提前看懂自己的狀況！</p>
     </div>
-    <ul class="points">
-      <li><b>7</b><span>題選擇題，憑直覺作答就好</span></li>
-      <li><b>0</b><span>不用填姓名、電話、身分證，網頁不會記錄任何資料</span></li>
-      <li><b>1</b><span>張專屬結果圖卡，讓你心裡有個底</span></li>
-    </ul>
-    <div class="vip-teaser">完成後把結果圖卡<strong>截圖回傳 LINE客服</strong>，小編開工就能升級<strong>「早鳥 VIP 優先處理」</strong>，不用再從頭說一次。</div>
-    <button class="btn" id="startBtn">開始體檢</button>
-    <p class="fine">結果僅供參考，不代表任何貸款或協商結果</p>
-  </section>
 
-  <!-- 題目 -->
-  <section class="screen" id="quiz">
+    <div class="points">
+      <div class="point"><div class="ic">📝</div><b>7</b><span>題選擇題<br>憑直覺作答</span></div>
+      <div class="point"><div class="ic">🔒</div><b>0</b><span>不填個資<br>不記錄資料</span></div>
+      <div class="point"><div class="ic">🎁</div><b>1</b><span>張專屬<br>結果圖卡</span></div>
+    </div>
+
+    <div class="vip-teaser">
+      <svg class="crown" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 24l2-14 6 6 4-9 4 9 6-6 2 14z" fill="#ffd76e"/><rect x="4" y="24" width="24" height="4" rx="2" fill="#f0a23b"/></svg>
+      完成後把結果圖卡<strong>截圖回傳 LINE客服</strong>，小編開工就能升級<strong>「早鳥 VIP 優先處理」</strong>，不用再從頭說一次。
+    </div>
+    <button class="btn shine" id="startBtn">開始體檢 →</button>
+    <p class="fine">結果僅供參考，不代表任何貸款或協商結果</p>
+  </div>
+</section>
+
+<!-- ================= 題目 ================= -->
+<section class="screen" id="quiz">
+  <div class="wrap">
     <div class="qtop">
       <button class="back" id="backBtn">← 上一題</button>
       <span class="count" id="count"></span>
     </div>
-    <div class="bar"><i id="barFill"></i></div>
+    <div class="dots" id="dots"></div>
+    <div class="qicon" id="qIcon"></div>
     <div class="qtext" id="qText"></div>
     <div class="qhint" id="qHint"></div>
     <div class="opts" id="opts"></div>
-  </section>
+  </div>
+</section>
 
-  <!-- 結果 -->
-  <section class="screen" id="result">
-    <p class="shot-tip">↓ 請截圖下方圖卡，回傳到 LINE 官方帳號 ↓</p>
+<!-- ================= 分析中 ================= -->
+<section class="screen" id="loading">
+  <div class="load-box">
+    <div class="scan"><div class="ring"></div><div class="core">🩺</div></div>
+    <h2>正在產生你的體檢圖卡</h2>
+    <ul class="ld-list" id="ldList">
+      <li>整理負債結構</li>
+      <li>評估月付壓力</li>
+      <li>解鎖早鳥 VIP</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= 結果 ================= -->
+<section class="screen" id="result">
+  <div class="wrap">
+    <p class="shot-tip">📸 請截圖下方圖卡，回傳到 LINE 官方帳號</p>
     <div class="card" id="card">
-      <div class="c-head"><div class="b" id="cBrand"></div><div class="r"><span class="t">財務體檢結果</span><span class="d" id="cDate"></span></div></div>
+      <div class="c-head">
+        <svg class="moon" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="#ffd76e"/><circle cx="23" cy="12" r="11" fill="#30287a"/><circle cx="6" cy="28" r="1.4" fill="#fff"/><circle cx="30" cy="27" r="1" fill="#fff"/></svg>
+        <div class="b" id="cBrand"></div>
+        <div class="r"><span class="t">財務體檢結果</span><span class="d" id="cDate"></span></div>
+      </div>
       <div class="c-body">
-        <div class="c-label">你的財務體檢類型</div>
-        <div class="c-type" id="cType"></div>
+        <div class="type-row">
+          <div class="type-badge" id="cBadge"></div>
+          <div>
+            <div class="c-label">你的財務體檢類型</div>
+            <div class="c-type" id="cType"></div>
+          </div>
+        </div>
         <div class="c-desc" id="cDesc"></div>
         <div class="gauge">
           <div class="g-row"><span>負債壓力指數</span><b id="cLevel"></b></div>
           <div class="g-track"><div class="g-dot" id="cDot"></div></div>
           <div class="g-scale"><span>輕度</span><span>中度</span><span>偏高</span><span>建議盡早諮詢</span></div>
         </div>
-        <div class="stress"><span>最有壓力的負債</span><b id="k0"></b></div>
+        <div class="stress"><span>🔥 最有壓力的負債</span><b id="k0"></b></div>
         <div class="chips">
           <div class="chip"><span>負債筆數</span><b id="k1"></b></div>
           <div class="chip"><span>月付佔收入</span><b id="k2"></b></div>
@@ -192,7 +322,12 @@ body{
         </div>
       </div>
       <div class="vip">
-        <div class="stamp">★ 早鳥 VIP 優先處理</div>
+        <svg class="medal" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M12 2h7l-3 14h-7z" fill="#5e2a96"/><path d="M28 2h-7l3 14h7z" fill="#5fa6d9"/>
+          <circle cx="20" cy="25" r="13" fill="#f0a23b"/><circle cx="20" cy="25" r="10" fill="#ffd76e"/>
+          <path d="M20 18.5l2 4.2 4.6.6-3.3 3.2.8 4.6-4.1-2.2-4.1 2.2.8-4.6-3.3-3.2 4.6-.6z" fill="#fff"/>
+        </svg>
+        <div class="stamp">早鳥 VIP 優先處理</div>
         <div class="when">截圖回傳 LINE，小編<b>上班後優先回覆</b>你</div>
         <div class="hours">服務時間：週一至週五 08:30–17:30（國定假日除外）</div>
       </div>
@@ -205,48 +340,56 @@ body{
     <div class="after">
       <h2>接下來只要兩步</h2>
       <ol class="steps">
-        <li>截圖上方的結果圖卡</li>
-        <li>打開 LINE 官方帳號，把截圖傳給我們</li>
+        <li><span>1</span>截圖上方的結果圖卡</li>
+        <li><span>2</span>打開 LINE 官方帳號，把截圖傳給我們</li>
       </ol>
       <a class="btn line" id="lineBtn" href="#" target="_blank" rel="noopener">前往 LINE 回傳截圖</a>
       <button class="btn ghost" id="retryBtn">重新體檢</button>
     </div>
-  </section>
+  </div>
+</section>
 
-</div>
+<canvas id="fx"></canvas>
 
 <script>
 /* ---------- 題目內容 ---------- */
 const QUESTIONS = [
-  { q:"你目前大約有幾筆貸款或卡債？", hint:"信用卡、信貸、車貸、民間借款都算一筆",
+  { icon:"💳", q:"你目前大約有幾筆貸款或卡債？", hint:"信用卡、信貸、車貸、民間借款都算一筆",
     opts:[["1 筆",0,"1 筆"],["2–3 筆",10,"2–3 筆"],["4 筆以上",20,"4 筆以上"],["不太清楚",12,"不清楚"]] },
-  { q:"金額最大的是哪一種？", hint:"選最讓你有壓力的那一種",
+  { icon:"🏦", q:"金額最大的是哪一種？", hint:"選最讓你有壓力的那一種",
     opts:[["信用卡／現金卡",8],["信用貸款",5],["車貸或房貸",3],["民間借款或當鋪",15],["好幾種差不多",12,"多種負債都有壓力"]] },
-  { q:"每個月要還的錢，大約佔收入幾成？", hint:"大概估就好，不用精算",
+  { icon:"📊", q:"每個月要還的錢，大約佔收入幾成？", hint:"大概估就好，不用精算",
     opts:[["3 成以下",0,"3 成以下"],["3–5 成",10,"3–5 成"],["5–7 成",20,"5–7 成"],["7 成以上",28,"7 成以上"]] },
-  { q:"最近半年的繳款狀況？", hint:"",
+  { icon:"📅", q:"最近半年的繳款狀況？", hint:"",
     opts:[["都有準時繳",0,"準時"],["偶爾晚幾天",8,"偶爾晚繳"],["常常只繳最低",14,"只繳最低"],["已有遲繳超過一個月",22,"遲繳逾月"]] },
-  { q:"有沒有借新的錢去還舊的債？", hint:"例如用 A 卡預借現金去繳 B 卡",
+  { icon:"🔄", q:"有沒有借新的錢去還舊的債？", hint:"例如用 A 卡預借現金去繳 B 卡",
     opts:[["沒有",0],["偶爾會",8],["經常這樣",16]] },
-  { q:"你目前的收入狀況？", hint:"",
+  { icon:"💼", q:"你目前的收入狀況？", hint:"",
     opts:[["固定薪資，有勞保",0],["有工作，但收入不固定",6],["自己當老闆／接案",6],["目前沒有收入",10]] },
-  { q:"你最想先解決哪件事？", hint:"明天小編會從這裡開始跟你聊",
+  { icon:"🎯", q:"你最想先解決哪件事？", hint:"小編上班後會從這裡開始跟你聊",
     opts:[["降低每個月的還款壓力",0],["把好幾筆債整合起來",0],["了解協商、更生等程序",0],["需要再周轉一筆資金",0]] }
 ];
 const MAX_SCORE = 20+15+28+22+16+10;
+const KEY_COLORS = ["#5e2a96","#5fa6d9","#2fb8a6","#ff9a4a","#ff7a6b"];
 
 const TYPES = {
-  negotiate:{ name:"協商評估型", desc:"繳款已經開始吃力。越早了解銀行協商等相關程序，你手上的選項就越多。",
+  negotiate:{ name:"協商評估型", icon:"🤝", color:"#e2483a", bg:"#ffe9e6",
+    desc:"繳款已經開始吃力。越早了解銀行協商等相關程序，你手上的選項就越多。",
     tips:["整理每家銀行的欠款金額與最近一次繳款日","先暫停用新借款補舊缺口，避免利息越滾越大"] },
-  multi:{ name:"多頭整合型", desc:"債務分散在好幾個地方，利息和管理成本加起來，可能比你想得還高。",
+  multi:{ name:"多頭整合型", icon:"🧩", color:"#7a4fe0", bg:"#efe9ff",
+    desc:"債務分散在好幾個地方，利息和管理成本加起來，可能比你想得還高。",
     tips:["列出每筆債務的利率、月付和剩餘期數","想想哪幾筆最貴、最想先處理"] },
-  monthly:{ name:"月付壓力型", desc:"每月還款佔收入比例偏高，生活的緩衝空間不太夠。",
-    tips:["算出每月最低生活所需，確認真正能還的金額","把固定支出列一張清單，明天一起討論"] },
-  unclear:{ name:"資訊釐清型", desc:"對自己的負債全貌還不太清楚。這是很多人的起點，不用擔心。",
+  monthly:{ name:"月付壓力型", icon:"⚖️", color:"#d97a0f", bg:"#fff1dc",
+    desc:"每月還款佔收入比例偏高，生活的緩衝空間不太夠。",
+    tips:["算出每月最低生活所需，確認真正能還的金額","把固定支出列一張清單，跟小編一起討論"] },
+  unclear:{ name:"資訊釐清型", icon:"🔍", color:"#2a7fdc", bg:"#e6f1ff",
+    desc:"對自己的負債全貌還不太清楚。這是很多人的起點，不用擔心。",
     tips:["可向聯徵中心申請個人信用報告，看見完整債務","把帳單、繳款簡訊集中在同一處整理"] },
-  funding:{ name:"資金規劃型", desc:"目前狀況大致可控，新的資金需求值得先評估清楚再決定。",
+  funding:{ name:"資金規劃型", icon:"🧭", color:"#1f9d8b", bg:"#e3f7f3",
+    desc:"目前狀況大致可控，新的資金需求值得先評估清楚再決定。",
     tips:["確認這筆資金的用途和未來的還款來源","比較時看總費用年百分率，不只看月付"] },
-  steady:{ name:"穩健調整型", desc:"整體負擔在可控範圍內，維持好習慣就是最好的策略。",
+  steady:{ name:"穩健調整型", icon:"🌱", color:"#2e9b4f", bg:"#e5f6ea",
+    desc:"整體負擔在可控範圍內，維持好習慣就是最好的策略。",
     tips:["持續準時繳款，信用紀錄會是你的資產","慢慢存下 3–6 個月生活費當緊急預備金"] }
 };
 
@@ -262,32 +405,57 @@ function show(id){
   window.scrollTo(0,0);
 }
 
+/* 夜空星星 */
+(function(){
+  const box = $("stars");
+  for(let i=0;i<40;i++){
+    const s = document.createElement("i");
+    s.style.left = Math.random()*100+"%";
+    s.style.top = Math.random()*70+"%";
+    s.style.animationDelay = (Math.random()*3)+"s";
+    const z = Math.random()<.2 ? 4 : 2;
+    s.style.width = s.style.height = z+"px";
+    box.appendChild(s);
+  }
+})();
+
 function renderQ(){
   const Q = QUESTIONS[step];
-  $("count").textContent = (step+1) + " / " + QUESTIONS.length;
-  $("barFill").style.width = (step/QUESTIONS.length*100) + "%";
+  $("count").innerHTML = "第 <b>"+(step+1)+"</b> 題 / 共 "+QUESTIONS.length+" 題";
+  $("dots").innerHTML = QUESTIONS.map((_,i)=>'<i class="'+(i<step?"done":i===step?"now":"")+'"></i>').join("");
   $("backBtn").hidden = step === 0;
+  const ic = $("qIcon"); ic.textContent = Q.icon; ic.style.animation="none"; void ic.offsetWidth; ic.style.animation="";
   $("qText").textContent = Q.q;
   $("qHint").textContent = Q.hint;
   const box = $("opts"); box.innerHTML = "";
   Q.opts.forEach((o,i)=>{
     const b = document.createElement("button");
     b.className = "opt" + (answers[step]===i ? " picked" : "");
-    b.textContent = o[0];
+    b.style.animationDelay = (i*0.05)+"s";
+    b.innerHTML = '<span class="k" style="background:'+KEY_COLORS[i%KEY_COLORS.length]+'">'+"ABCDE"[i]+'</span><span></span>';
+    b.lastChild.textContent = o[0];
     b.onclick = ()=>{
       if(busy) return;
       busy = true;
       answers[step] = i;
       box.querySelectorAll(".opt").forEach(x=>x.classList.remove("picked"));
       b.classList.add("picked");
+      b.firstChild.textContent = "✓";
       setTimeout(()=>{
-        busy = false;
-        if(step < QUESTIONS.length-1){ step++; renderQ(); }
-        else { $("barFill").style.width="100%"; renderResult(); }
-      }, 220);
+        if(step < QUESTIONS.length-1){ busy = false; step++; renderQ(); }
+        else { runLoading(); }
+      }, 260);
     };
     box.appendChild(b);
   });
+}
+
+function runLoading(){
+  show("loading");
+  const items = $("ldList").querySelectorAll("li");
+  items.forEach(li=>li.classList.remove("ok"));
+  items.forEach((li,i)=>setTimeout(()=>li.classList.add("ok"), 450*(i+1)));
+  setTimeout(()=>{ busy = false; renderResult(); }, 450*items.length+450);
 }
 
 function pickType(a){
@@ -300,6 +468,7 @@ function pickType(a){
 }
 
 function pad(n){return String(n).padStart(2,"0")}
+
 function renderResult(){
   const a = answers;
   const missing = QUESTIONS.findIndex((Q,i)=>a[i]===undefined || !Q.opts[a[i]]);
@@ -309,7 +478,7 @@ function renderResult(){
   const pct = Math.round(score/MAX_SCORE*100);
   let level, color;
   if(pct<30){level="輕度";color="var(--ok)"}
-  else if(pct<55){level="中度";color="var(--mid)"}
+  else if(pct<55){level="中度";color="#d9a21f"}
   else if(pct<75){level="偏高";color="var(--high)"}
   else{level="建議盡早諮詢";color="var(--top)"}
 
@@ -317,11 +486,14 @@ function renderResult(){
   const now = new Date();
   $("cBrand").textContent = CONFIG.companyName;
   $("cDate").textContent = now.getFullYear()+"/"+pad(now.getMonth()+1)+"/"+pad(now.getDate())+" "+pad(now.getHours())+":"+pad(now.getMinutes());
+  $("cBadge").textContent = T.icon;
+  $("cBadge").style.background = T.bg;
   $("cType").textContent = T.name;
+  $("cType").style.color = T.color;
   $("cDesc").textContent = T.desc;
   $("cLevel").textContent = level;
   $("cLevel").style.color = color;
-  $("cDot").style.left = Math.min(Math.max(pct,4),96) + "%";
+  $("cDot").style.left = "0%";
   $("k0").textContent = QUESTIONS[1].opts[a[1]][2] || QUESTIONS[1].opts[a[1]][0];
   $("k1").textContent = QUESTIONS[0].opts[a[0]][2];
   $("k2").textContent = QUESTIONS[2].opts[a[2]][2];
@@ -329,13 +501,39 @@ function renderResult(){
   $("cTips").innerHTML = T.tips.map(t=>"<li>"+t+"</li>").join("");
   $("cCode").textContent = "LD" + pad(now.getMonth()+1) + pad(now.getDate()) + "-" + a.map(x=>x+1).join("");
   show("result");
+  setTimeout(()=>{ $("cDot").style.left = Math.min(Math.max(pct,4),96) + "%"; }, 150);
+  sparkle();
+}
+
+/* 完成時的金色光點（約 2 秒後自動消失，不會出現在截圖裡） */
+function sparkle(){
+  const c = $("fx"), ctx = c.getContext("2d");
+  const W = c.width = innerWidth, H = c.height = innerHeight;
+  const cols = ["#ffd76e","#f0a23b","#7a45c2","#5fa6d9","#2fb8a6","#ff7a6b"];
+  const ps = Array.from({length:70},()=>({
+    x:W/2, y:H*0.35, vx:(Math.random()-.5)*9, vy:-Math.random()*9-3,
+    r:Math.random()*4+2, c:cols[Math.floor(Math.random()*cols.length)], rot:Math.random()*6, vr:(Math.random()-.5)*.3
+  }));
+  const t0 = performance.now();
+  (function f(t){
+    const k = (t-t0)/2000;
+    ctx.clearRect(0,0,W,H);
+    if(k>=1) return;
+    ps.forEach(p=>{
+      p.vy += .25; p.x += p.vx; p.y += p.vy; p.rot += p.vr;
+      ctx.save(); ctx.globalAlpha = 1-k; ctx.translate(p.x,p.y); ctx.rotate(p.rot);
+      ctx.fillStyle = p.c; ctx.fillRect(-p.r,-p.r/2,p.r*2,p.r); ctx.restore();
+    });
+    requestAnimationFrame(f);
+  })(t0);
 }
 
 $("brandName").textContent = CONFIG.companyName;
 $("lineBtn").href = CONFIG.lineUrl;
-$("startBtn").onclick = ()=>{ answers=[]; step=0; busy=false; renderQ(); show("quiz"); };
+function restart(){ answers=[]; step=0; busy=false; renderQ(); show("quiz"); }
+$("startBtn").onclick = restart;
+$("retryBtn").onclick = restart;
 $("backBtn").onclick = ()=>{ if(busy) return; if(step>0){ step--; renderQ(); } };
-$("retryBtn").onclick = ()=>{ answers=[]; step=0; busy=false; renderQ(); show("quiz"); };
 </script>
 </body>
 </html>
